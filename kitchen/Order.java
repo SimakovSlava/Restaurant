@@ -1,0 +1,31 @@
+package com.javarush.task.task27.task2712.kitchen;
+
+import com.javarush.task.task27.task2712.ConsoleHelper;
+import com.javarush.task.task27.task2712.Tablet;
+
+import java.io.IOException;
+import java.util.List;
+
+//Заказ
+public class Order {
+    private final Tablet tablet;
+    protected List<Dish> dishes;
+
+    public Order(Tablet tablet) throws IOException {
+        this.tablet = tablet;
+        this.dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(toString());
+    }
+
+    @Override
+    public String toString() {
+        if(dishes.isEmpty()){
+            return "";
+        }
+        return "Your order: " +
+                dishes.toString() +
+                " of Tablet{" + tablet +
+                ", dishes=" + dishes +
+                '}';
+    }
+}
