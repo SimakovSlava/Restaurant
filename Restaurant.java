@@ -7,18 +7,18 @@ import java.io.IOException;
 
 public class Restaurant {
     public static void main(String[] args) throws IOException {
-        Tablet tablet = new Tablet(5);
-
-        tablet.createOrder();
-        tablet.createOrder();
-        tablet.createOrder();
-        tablet.createOrder();
-
+        Tablet tablet = new Tablet(1);
         Cook cook = new Cook("Slava");
-        tablet.addObserver(cook);
-
         Waiter waiter = new Waiter();
+
+        tablet.addObserver(cook);
         cook.addObserver(waiter);
+
+        tablet.createOrder();
+        tablet.createOrder();
+        tablet.createOrder();
+        tablet.createOrder();
+
 
     }
 }

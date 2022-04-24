@@ -6,6 +6,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class Cook extends Observable implements Observer {
+    @Override
+    public String toString() {
+        return name;
+    }
+
     //Повар
     private String name;
 
@@ -15,14 +20,8 @@ public class Cook extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        ConsoleHelper.writeMessage("Start cooking - " + arg);
         setChanged();
         notifyObservers(arg);
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        ConsoleHelper.writeMessage("Start cooking - " + arg);
     }
 }
-
