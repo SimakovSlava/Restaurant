@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Restaurant {
     public static void main(String[] args) throws IOException {
         Tablet tablet = new Tablet(1);
-        Cook cook = new Cook("Slava");
+        Cook cook = new Cook("Повар");
         Waiter waiter = new Waiter();
 
         tablet.addObserver(cook);
